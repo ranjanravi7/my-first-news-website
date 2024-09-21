@@ -1,0 +1,225 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-text-color: #2e3d49;
+    --secondary-text-color: #576574;
+    --accent-color: #1e90ff;
+    --accent-color-dark: #1c7ed6;
+    --background-color: #31394a; 
+    --card-bg: #fff;
+    --nav-bg: #a49898; 
+    --nav-shadow: rgba(0, 0, 0, 0.1);
+    --card-shadow: rgba(0, 0, 0, 0.05);
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+    font-size: 16px;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+nav {
+    background-color: var(--nav-bg);
+    box-shadow: 0 2px 10px var(--nav-shadow);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    padding: 12px 0;
+    transition: all var(--transition-speed) ease;
+}
+
+.main-nav {
+    justify-content: space-between;
+}
+
+.company-logo img {
+    width: 100px;
+    transition: transform var(--transition-speed) ease;
+}
+
+.company-logo img:hover {
+    transform: scale(1.05);
+}
+
+.nav-links ul {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-item {
+    position: relative;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--primary-text-color);
+    transition: color var(--transition-speed) ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    color: var(--accent-color);
+}
+
+.nav-item:before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: all var(--transition-speed) ease;
+}
+
+.nav-item:hover:before,
+.nav-item.active:before {
+    left: 0;
+    width: 100%;
+}
+
+.search-bar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.news-input {
+    width: 250px;
+    padding: 10px 15px;
+    border: 2px solid var(--accent-color);
+    border-radius: 25px;
+    font-size: 14px;
+    color: var(--primary-text-color);
+    transition: border-color var(--transition-speed) ease;
+}
+
+.news-input:focus {
+    border-color: var(--accent-color-dark);
+    outline: none;
+}
+
+#search-button {
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+#search-button:hover {
+    background-color: var(--accent-color-dark);
+    transform: scale(1.05);
+}
+
+main {
+    padding: 20px;
+    margin-top: 120px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    width: 340px;
+    min-height: 400px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px var(--card-shadow);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.card:hover {
+    transform: translateY(-5px) rotate(0.5deg); 
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-header img {
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+#news-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primary-text-color);
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+#news-sources {
+    font-size: 12px;
+    color: var(--secondary-text-color);
+    margin-bottom: 12px;
+}
+
+#news-desc {
+    font-size: 14px;
+    color: var(--secondary-text-color);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+footer {
+    padding: 20px;
+    background-color: var(--nav-bg);
+    text-align: center;
+    box-shadow: 0 -2px 10px var(--nav-shadow);
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 14px;
+    color: #fff; 
+}
